@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Formulario Clientes</h1>
+    <form action="/crud_c" method="POST">
+        <input type="text" id="txt_id" name="txt_id" placeholder="0">
+        <input type="text" id="txt_nit" name="txt_nit" placeholder="nit">
+        <input type="text" id="txt_nombres" name="txt_nombres" placeholder="nombres">
+        <input type="text" id="txt_apellidos" name="txt_apellidos" placeholder="apellidos">
+        <input type="text" id="txt_direccion" name="txt_direccion" placeholder="direccion">
+        <input type="text" id="txt_telefono" name="txt_telefono" placeholder="telefono">
+        <input type="date" id="txt_fn" name="txt_fn" placeholder="yyyy-mm-dd">
+        <button type="submit" id="btn_crear" name="btn_crear" value="crear">Crear</button>
+        <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actualizar">Actualizar</button>
+        <button type="submit" id="btn_borrar" name="btn_borrar" value="borrar">Borrar</button>
+
+    </form>
+    <table border = "1px">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nit</th>
+                <th>nombres</th>
+                <th>apellidos</th>
+                <th>direccion</th>
+                <th>telefono</th>
+                <th>fecha_nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% resultado.forEach((clientes) => {%>
+                <tr>
+                    <td><%= clientes.id_cliente %></td>
+                    <td><%= clientes.nit %></td>
+                    <td><%= clientes.nombres %></td>
+                    <td><%= clientes.apellidos %></td>
+                    <td><%= clientes.direccion %></td>
+                    <td><%= clientes.telefono %></td>
+                    <td><%= clientes.fecha_nacimiento %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+</html>
